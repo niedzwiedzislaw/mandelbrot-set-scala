@@ -15,6 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import ghx.mandelbrot.MandelbrotCanvas?>
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="ghx.mandelbrot.MandelbrotPanel">
     <children>
@@ -23,7 +24,7 @@
             <center>
                 <VBox fx:id="canvasContainer" maxHeight="Infinity" maxWidth="Infinity" minHeight="30.0" minWidth="30.0"
                       prefHeight="600.0" prefWidth="600.0">
-                    <ResizableCanvas fx:id="canvas" height="${canvasContainer.height}" width="${canvasContainer.width}"/>
+                    <MandelbrotCanvas fx:id="canvas" height="${canvasContainer.height}" width="${canvasContainer.width}"/>
                 </VBox>
             </center>
             <right>
@@ -93,7 +94,7 @@
                                     </fx:define>
                                     <RadioButton toggleGroup="$mode" mnemonicParsing="false" text="Parallel Array" userData="parArray" selected="true" />
                                     <RadioButton toggleGroup="$mode" mnemonicParsing="false" text="Explicit Threads" userData="threads" />
-                                    <RadioButton toggleGroup="$mode" mnemonicParsing="false" text="NG" userData="ng" />
+                                    <RadioButton toggleGroup="$mode" mnemonicParsing="false" text="single thread" userData="single thread" />
                                 </HBox>
                             </children>
                             <padding>
