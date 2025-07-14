@@ -3,9 +3,10 @@ name := "mandelbrot-set"
 
 version := "0.1"
 
-scalaVersion := "2.13.6"
+scalaVersion := "3.6.4"
 
 //scalacOptions ++= Seq("-unchecked", "-deprecation", "-Xcheckinit", "-encoding", "utf8", "-feature")
+scalacOptions ++= Seq("-rewrite", "-source:3.4-migration")
 
 javaFxMainClass := "ghx.mandelbrot.WApp"
 
@@ -42,7 +43,7 @@ Global / serverConnectionType := ConnectionType.Tcp
 // Add JavaFX dependencies
 lazy val javaFXModules = Seq("base", "controls", "fxml", "graphics", "media", "swing", "web")
 libraryDependencies ++= javaFXModules.map(m =>
-  "org.openjfx" % s"javafx-$m" % "14.0.1" classifier "win"
+  "org.openjfx" % s"javafx-$m" % "23.0.2" classifier osName
 )
 
 libraryDependencies += "io.kamon" %% "kamon-core" % "2.5.11"
